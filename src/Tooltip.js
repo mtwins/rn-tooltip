@@ -173,7 +173,7 @@ class Tooltip extends React.Component<Props, State> {
       (frameOffsetX, frameOffsetY, width, height, pageOffsetX, pageOffsetY) => {
         this.setState({
           xOffset: pageOffsetX,
-          yOffset: pageOffsetY,
+          yOffset: pageOffsetY-25,
           elementWidth: width,
           elementHeight: height,
         });
@@ -240,7 +240,7 @@ Tooltip.defaultProps = {
 
 const styles = {
   container: withOverlay => ({
-    backgroundColor: withOverlay ? 'rgb(105,105,105,0.70)' : 'transparent',
+    backgroundColor: withOverlay ? 'rgba(105,105,105,0.70)' : 'transparent',
     flex: 1,
   }),
 };
