@@ -166,6 +166,7 @@ class Tooltip extends React.Component<Props, State> {
   componentDidMount() {
     // wait to compute onLayout values.
     setTimeout(this.getElementPosition, 500);
+    setTimeout(() => {this.setState({isVisible:true})}, 1000);
   }
 
   getElementPosition = (event) => {
