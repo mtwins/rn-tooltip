@@ -141,7 +141,7 @@ class Tooltip extends React.Component<Props, State> {
     if (!withTooltip)
       return this.wrapWithPress(toggleOnPress, this.props.children);
 
-    const { yOffset, xOffset, element, elementHeight } = this.state;
+    const { yOffset, xOffset, elementWidth, elementHeight } = this.state;
     const tooltipStyle = this.getTooltipStyle();
     return (
       <View>
