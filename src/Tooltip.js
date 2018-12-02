@@ -175,7 +175,7 @@ class Tooltip extends React.Component<Props, State> {
       (frameOffsetX, frameOffsetY, width, height, pageOffsetX, pageOffsetY) => {
         this.setState({
           xOffset: pageOffsetX,
-          yOffset: pageOffsetY-25,
+          yOffset: pageOffsetY,
           elementWidth: width,
           elementHeight: height,
         });
