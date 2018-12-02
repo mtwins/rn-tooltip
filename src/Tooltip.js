@@ -37,7 +37,7 @@ type Props = {
   withOverlay: boolean,
   backgroundColor: string,
   highlightColor: string,
-  topOffset: number,
+  topOffset: number
 };
 
 class Tooltip extends React.Component<Props, State> {
@@ -141,7 +141,7 @@ class Tooltip extends React.Component<Props, State> {
     if (!withTooltip)
       return this.wrapWithPress(toggleOnPress, this.props.children);
 
-    const { yOffset, xOffset, elementWidth, elementHeight } = this.state;
+    const { yOffset, xOffset, element, elementHeight } = this.state;
     const tooltipStyle = this.getTooltipStyle();
     return (
       <View>
@@ -225,6 +225,7 @@ Tooltip.propTypes = {
   withOverlay: PropTypes.bool,
   backgroundColor: PropTypes.string,
   highlightColor: PropTypes.string,
+  topOffset: PropTypes.number
 };
 
 Tooltip.defaultProps = {
@@ -238,6 +239,7 @@ Tooltip.defaultProps = {
   backgroundColor: '#617080',
   onClose: () => {},
   onOpen: () => {},
+  topOffset: 0
 };
 
 const styles = {
