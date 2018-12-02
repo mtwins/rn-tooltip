@@ -37,12 +37,13 @@ type Props = {
   withOverlay: boolean,
   backgroundColor: string,
   highlightColor: string,
+  topOffset: number,
 };
 
 class Tooltip extends React.Component<Props, State> {
   state = {
     isVisible: false,
-    yOffset: 0,
+    yOffset: this.props.topOffset,
     xOffset: 0,
     elementWidth: 0,
     elementHeight: 0,
