@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Modal,
   View,
+  Platform,
   ViewPropTypes as RNViewPropTypes,
 } from 'react-native';
 import NativeMethodsMixin from 'react-native/Libraries/Renderer/shims/NativeMethodsMixin';
@@ -171,6 +172,18 @@ class Tooltip extends React.Component<Props, State> {
   }
 
   getElementPosition = (event) => {
+    if (Platform.OS === 'android')
+    this.renderedElement && this.renderedElement.measure(
+      (frameOffsetX, frameOffsetY, width, height, pageOffsetX, pageOffsetY) => {
+        this.setState({
+          xOffset: pageOffsetX,
+          yOffset: pageOffsetY-this.props.topOffset,
+          elementWidth: width,
+          elementHeight: height,
+        });
+      }
+    );
+    else
     this.renderedElement && this.renderedElement.measure(
       (frameOffsetX, frameOffsetY, width, height, pageOffsetX, pageOffsetY) => {
         this.setState({
